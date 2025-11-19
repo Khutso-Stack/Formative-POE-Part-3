@@ -318,3 +318,156 @@ textarea {
    Scroll offset fix
 ================================= */
 html { scroll-padding-top: 64px; }
+
+/* ====================================
+   JS ENHANCEMENTS – Accordion, Modal,
+   Lightbox & Form Feedback
+   ==================================== */
+
+/* Accordion */
+.faq .accordion-item {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid var(--border-soft, #ddd);
+  background: var(--surface, #fff);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.accordion-icon {
+  font-weight: 700;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  padding: 0 1rem;
+  background: var(--surface-soft, #fafafa);
+}
+
+.accordion-panel p {
+  padding: 0.5rem 0 0.75rem;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox.is-visible {
+  display: flex;
+}
+
+.lightbox-inner {
+  max-width: 900px;
+  width: 90%;
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.lightbox-inner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+}
+
+.modal-overlay.is-visible {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  max-width: 480px;
+  width: 90%;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Forms: errors & feedback */
+.form .has-error {
+  border-color: #c62828;
+  background: #ffebee;
+}
+
+.field-error {
+  display: block;
+  font-size: 0.85rem;
+  color: #c62828;
+  margin-top: 0.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.form-feedback.error {
+  color: #c62828;
+}
+
+.form-feedback.success {
+  color: #2e7d32;
+}
+
+/* Search input */
+.program-search input[type="search"] {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft, #ccc);
+}
+
