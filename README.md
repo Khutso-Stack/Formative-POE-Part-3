@@ -1,171 +1,179 @@
-# Helping Hands NGO Website 🌍  
+✨ JavaScript Enhancements (Part 3 Requirements)
 
-A responsive website created for **Helping Hands Children's Shelter**, a non-profit organisation that provides food, shelter, and hope to vulnerable children in South Africa.  
-This project is based on **Proposal 1** of the WEDE5020 assignment.  
+This phase introduced full JavaScript interactivity across the website.
+All JavaScript code is contained in js/main.js, which is linked on every page using:
 
-👉 Live Site: [Helping Hands Website](https://khutso-stack.github.io/Formative-2-Part-2/)  
-👉 Repository: [Formative-2-Part-2](https://github.com/Khutso-Stack/Formative-2-Part-2)  
-
----
-
-## 📖 Project Overview
-The website highlights the NGO’s mission, values, and community programs.  
-It includes:  
-- **Home page** with hero banner and quick navigation  
-- **About Us** page with organisation background, mission, vision, and values  
-- **Programs** page showcasing shelter, feeding, and education support programs  
-- **Get Involved** page for volunteers and donors (form submission)  
-- **Contact** page with map and contact details  
-
----
-
-## 🛠️ Technologies Used
-- **HTML5** – page structure and semantic content  
-- **CSS3** – styling, responsive layout, and modern design  
-- **Flexbox & CSS Grid** – layout control for cards, split sections, and responsiveness  
-
-├── index.html # Home page
-├── about.html # About Us page
-├── programs.html # Our Programs page
-├── enquiry.html # Get Involved page
-├── contact.html # Contact page
-├── css/
-│ └── style.css # Main stylesheet
-└── images/ # All images (hero, values, programs, etc.)
+<script src="js/main.js" defer></script>
 
 
+The defer attribute ensures the script loads after the page content, improving performance and preventing blocking.
 
----
+🔹 1. FAQ Accordion (Home & About)
 
-## 🚀 How to Run
-1. Clone or download this repository.  
-2. Ensure the `css` and `images` folders remain in the same directory as your HTML files.  
-3. Open `index.html` in any modern web browser.  
-4. Or simply visit the **live site**: [Helping Hands Website](https://khutso-stack.github.io/Formative-2-Part-2/)  
+A dynamic accordion was implemented to make long answers collapsible:
 
----
+Each FAQ item expands when clicked.
 
-## 📱 Responsiveness
-- Desktop → 3-column grid for cards and programs  
-- Tablet → 2-column grid  
-- Mobile → stacked 1-column layout  
-- Sticky navigation for better user experience  
+Only one panel opens at a time (others auto-collapse).
 
-### Responsive Screenshots
+Smooth animations added using max-height and CSS transitions.
 
-#### Desktop (1280×800)
-| Page | Screenshot |
-|---|---|
-| Home | <img src="docs/screenshots/desktop-home.png" width="520" alt="Desktop – Home"> |
-| About | <img src="docs/screenshots/desktop-about.png" width="520" alt="Desktop – About"> |
-| Programs | <img src="docs/screenshots/desktop-programs.png" width="520" alt="Desktop – Programs"> |
-| Get Involved | <img src="docs/screenshots/desktop-enquiry.png" width="520" alt="Desktop – Enquiry"> |
-| Contact | <img src="docs/screenshots/desktop-contact.png" width="520" alt="Desktop – Contact"> |
+Improves readability and reduces scrolling.
 
-#### Mobile (375–430px)
-| Page | Screenshot |
-|---|---|
-| Home | <img src="docs/screenshots/mobile-home.jpg" width="240" alt="Mobile – Home"> |
-| Programs | <img src="docs/screenshots/mobile-programs.jpg" width="240" alt="Mobile – Programs"> |
-| Contact | <img src="docs/screenshots/mobile-contact.jpg" width="240" alt="Mobile – Contact"> |
+This uses DOM manipulation and event listeners to toggle .is-open classes.
 
----
+🔹 2. Lightbox Image Viewer (Home & Programs)
 
-## ✨ Features
-- Sticky navigation menu  
-- Hero banner with background image overlay  
-- Responsive grid layouts  
-- Split layout for text and images  
-- Call-to-action buttons  
-- Contact form with embedded Google Map  
-- Accessibility: `:focus-visible` outlines + reduced motion support  
+All gallery images were upgraded with a click-to-enlarge lightbox viewer:
 
----
+Clicking a .gallery-item opens the image in a full-screen overlay.
 
----
+Caption automatically generated using the image’s alt text.
 
-## 📄 Wireframes
-Low-fidelity wireframes were created for all pages as part of planning and documentation.  
+Users can close the lightbox via:
 
----
+the close button (×)
 
-## 📌 Changelog
+clicking outside the image
 
-### v1.0 – Initial Setup (July 2025)
-- Created GitHub repository: `Formative-1-Part-1`  
-- Added initial project files: `index.html`, `about.html`, `programs.html`, `enquiry.html`, `contact.html`  
-- Created `css/style.css` with base styling  
-- Published first version using GitHub Pages  
+This provides an interactive, media-rich experience.
 
-### v1.1 – Content & Layout Updates
-- Updated **About Us** page with mission, vision, and values (Care, Community, Integrity)  
-- Added **Our Programs** page with 3-column layout (Health, Education, Community Strengthening)  
-- Included split-section layout for "How We Measure Impact"  
-- Fixed navigation links across all pages  
+🔹 3. Volunteer Modal Popup (Home Page)
 
-### v1.2 – Design Enhancements
-- Improved hero section with background image + gradient overlay  
-- Styled buttons (`.btn` and `.btn.cta`) with hover effects  
-- Added responsive design breakpoints for tablets and mobile  
-- Standardized card layout for gallery and program features  
+The “Become a Volunteer” button triggers a custom modal window:
 
-### v1.3 – Contact & Map Integration
-- Added **Contact Us** page with:
-  - Contact details and branch addresses  
-  - Embedded Google Map (Johannesburg, SA)  
-- Updated footer across all pages  
+Modal opens when the <a id="open-volunteer-modal"> is clicked.
 
-### v1.4 – Wireframes & Documentation
-- Designed and uploaded low-fidelity wireframes for all pages  
-- Added project documentation in README (organisation overview, goals, features, technical requirements, timeline, budget)  
+Closes when clicking:
 
-### v1.5 – CSS Styling & Responsive Design (Sept 2025)
-- Created external stylesheet `css/style.css` and linked on all pages  
-- Established base theme tokens (colors, spacing, shadows) and global reset  
-- Implemented Grid/Flex layouts (`.grid`, `.split`, `.grid-2col`)  
-- Added hover states, shadows, and sticky nav  
-- Added responsive breakpoints (980px, 900px, 768px, 680px)  
-- Implemented responsive images with `srcset`/`sizes`  
-- Accessibility improvements: `:focus-visible` outlines + prefers-reduced-motion  
-- Updated hero image with `image-set` for high-DPI screens  
+the close icon (#close-volunteer-modal)
 
----
+outside the modal content
 
-## 📌 Credits
-- Images: Unsplash & local placeholder images
-- Depositphotos. Hungry African children [Stock photo].
-License: Royalty-free (paid stock).
-URL: https://depositphotos.com/photos/hungry-african-children.html 
+Uses ARIA attributes (aria-hidden) for accessibility.
 
-SOS Africa. South African children — photo gallery.
-License: Copyrighted gallery; permission may be required for reuse.
-URL: https://www.sosafrica.com/south-african-children-photo-gallery-images/
+This improves visibility of volunteer opportunities and increases engagement.
 
-African Relief. Starving African children: Crisis, causes & solutions (article).
-License: Article; embedded photos may be copyrighted.
-URL: https://africanrelief.org/starving-african-children-crisis-causes-solutions/
+🔹 4. Dynamic “Success Stories” Section
 
-Arise Africa. Feeding Program.
-License: Organisation site; photos may be copyrighted.
-URL: https://www.ariseafrica.org/what-we-do/feeding-program
+Success stories are generated using JavaScript arrays instead of hard-coded HTML:
 
-Alamy. Children eating in a soup kitchen, Cape Town, South Africa [Stock photo].
-License: Rights-managed/royalty-free (paid stock).
-URL: https://www.alamy.com/stock-photo-children-eating-in-a-soup-kitchen-cape-town-south-africa-15130061.html
+A list of children’s stories is stored in an array.
 
-GROW Educare Centres. Feeding our beautiful future.
-License: Organisation site; photos may be copyrighted.
-URL: https://www.growecd.org.za/feeding-our-beautiful-future/ 
+JS loops over this data and creates <article> cards dynamically.
 
-- Designed & developed by **Khutso Sebea** for WEDE5020 practical assessment  
+Cards are appended to the #stories-grid container.
 
----
+This demonstrates DOM creation, iteration, and dynamic content rendering.
 
-## 📄 License
-This project is for **educational purposes only** and not intended for commercial use.  
+🔹 5. Program Search & Filter (Programs Page)
 
+A live, instant search bar was added to filter programs by keywords:
 
+Input field: #program-search-input
 
----
+Program cards: .program-card with data-tags
 
-## 📂 Project Structure
+JS listens for input events and shows/hides cards based on:
+
+text content (title + description)
+
+tags in data-tags
+
+Examples users can search: nutrition, education, shelter, community, family.
+
+This greatly improves usability and shows practical DOM filtering logic.
+
+🔹 6. Form Validation (Enquiry & Contact Pages)
+
+Both forms use JavaScript-powered validation and error messaging:
+
+Forms:
+
+#enquiry-form
+
+#contact-form
+
+JS checks:
+
+required fields
+
+email format using checkValidity()
+
+minimum/maximum lengths
+
+Invalid inputs get:
+
+.has-error class
+
+Inline <span class="field-error"> messages
+
+Errors scroll with the page for accessibility.
+
+This ensures users cannot submit incomplete forms.
+
+🔹 7. AJAX Simulation (Fake Submit)
+
+Although the site runs on GitHub Pages, the forms simulate real submissions:
+
+JS creates a FormData object.
+
+A fakeSubmit() function returns a Promise with a timeout.
+
+A loading delay replicates real server requests.
+
+On success:
+
+Feedback text appears (#enquiry-feedback or #contact-feedback)
+
+Form resets
+
+This demonstrates knowledge of asynchronous JavaScript and realistic form handling.
+
+🔹 8. Modal, Accordion, Lightbox & Forms Reuse One JS File
+
+All features reuse the same JavaScript file, showing:
+
+✔ Clean separation of structure (HTML) + style (CSS) + behaviour (JS)
+✔ Modular functions
+✔ Shared event listeners
+✔ Reusability across pages
+
+📘 Updated README Section (Ready to Paste)
+
+Here is a complete block you can paste directly into your README:
+
+🧩 JavaScript Features (Part 3 Enhancements)
+
+Interactive behaviour for the Helping Hands website is implemented entirely in the external script js/main.js. JavaScript was used to improve user experience, handle form validations, and dynamically update content.
+
+✔ FAQ Accordion
+
+Expandable and collapsible FAQ sections on the Home and About pages using event listeners and DOM manipulation.
+
+✔ Lightbox Image Viewer
+
+Clickable gallery images open in a full-screen lightbox overlay with captions sourced from the alt attribute.
+
+✔ Volunteer Modal Popup
+
+Custom modal opens from the Home page CTA and closes when clicking outside the modal or using the close button.
+
+✔ Dynamic Success Stories
+
+Children’s success stories generated at runtime using JavaScript arrays and DOM element creation.
+
+✔ Program Search Filter
+
+Real-time search input that filters .program-card elements based on keywords and data-tags.
+
+✔ Form Validation (Enquiry & Contact)
+
+JavaScript validates required fields, email format, and message length.
+Invalid fields get inline error messages and visual indicators.
+
+✔ AJAX-Style Submission Simulation
+
+Forms mimic asynchronous submission using Promises, show success messages, and reset fields.
+
+All enhancements make the site more interactive, user-friendly, and aligned with the assignment requirements for JavaScript integration (Part 3).
