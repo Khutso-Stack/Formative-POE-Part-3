@@ -1,114 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Helping Hands – Home</title>
-  <meta name="description" content="Helping Hands Children's Shelter provides shelter, meals, education and community support to vulnerable children across South Africa.">
+  <title>About Helping Hands – Our Story</title>
+  <meta name="description" content="Learn about Helping Hands Children's Shelter, our mission, vision, and the team supporting vulnerable children in South Africa.">
   <link rel="stylesheet" href="css/style.css?v=3">
-<script src="js/main.js" defer></script> 
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <!-- Site header -->
   <header class="site-header">
-    <h1>Helping Hands Children’s Shelter</h1>
-    <p>Support for today and opportunities for tomorrow</p>
+    <h1>About Helping Hands</h1>
+    <p>Providing safe spaces, meals and learning support to children in need.</p>
   </header>
 
-  <!-- Primary nav -->
   <nav class="primary" aria-label="Main">
     <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About Us</a></li>
       <li><a href="programs.html">Our Programs</a></li>
       <li><a href="enquiry.html">Get Involved</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero (background handled in CSS .hero) -->
-  <section class="hero">
-    <div class="inner">
-      <h2>Every child deserves care and hope</h2>
-      <p>Together we can provide shelter, meals, and opportunities for brighter futures.</p>
-      <a href="programs.html" class="btn cta">Explore Our Programs</a>
-    </div>
-  </section>
+  <main>
+    <section class="section split">
+      <div class="text">
+        <h2>Who We Are</h2>
+        <p>Helping Hands Children’s Shelter is a community-based organisation that supports vulnerable children through safe shelter, nutrition and educational support programmes.</p>
 
-  <!-- Intro / Values split -->
-  <section class="section split">
-    <div class="text">
-      <h2>Our Values</h2>
-      <p class="meta">What guides our work with children and communities.</p>
+        <h3>Our Mission</h3>
+        <p>To create a safe, nurturing environment where every child can grow, learn and dream beyond their circumstances.</p>
 
-      <article>
-        <h3>Care</h3>
-        <p>We lead with empathy, treating every child with dignity and warmth.</p>
-      </article>
+        <h3>Our Vision</h3>
+        <p>A South Africa where no child is left without care, protection or opportunity.</p>
+      </div>
 
-      <article>
-        <h3>Community</h3>
-        <p>We partner with families, schools, and local organisations to uplift together.</p>
-      </article>
+      <div class="image">
+        <img src="images/Group-Photo.jpg" alt="Helping Hands staff and volunteers with children" class="img-fill" loading="lazy">
+      </div>
+    </section>
 
-      <article>
-        <h3>Integrity</h3>
-        <p>We are transparent and accountable—trust is the foundation of our impact.</p>
-      </article>
-    </div>
+    <!-- Accordion here reuses the same JS as Home -->
+    <section class="section faq">
+      <h2>How We Work</h2>
 
-    <div class="image">
-      <!-- Use one of your images folder items -->
-      <img 
-        src="images/NGO.jpg"
-        alt="Children supported by Helping Hands"
-        class="img-fill">
-    </div>
-  </section>
+      <button class="accordion-item" type="button">
+        Family-Centred Approach
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>We work closely with parents, caregivers and social workers to ensure children receive holistic support at home and at the shelter.</p>
+      </div>
 
-  <!-- Gallery of work (uses your images folder contents) -->
-  <section class="section">
-    <h2>Our Work in South Africa</h2>
-    <div class="grid">
-      <!-- Shelter -->
-      <article class="card">
-        <img src="images/Kids-post-image.jpg" alt="Children in safe shelter">
-        <div class="body">Safe shelter for children</div>
-      </article>
+      <button class="accordion-item" type="button">
+        Partnerships & Schools
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>We partner with local schools, clinics and faith-based organisations to refer children and coordinate services.</p>
+      </div>
 
-      <!-- Meals -->
-      <article class="card">
-        <img src="images/meal.jpg" alt="Meal distribution to children">
-        <div class="body">Meal distribution program</div>
-      </article>
+      <button class="accordion-item" type="button">
+        Accountability & Transparency
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>We follow clear governance processes, keep accurate records and provide regular reporting to funders and stakeholders.</p>
+      </div>
+    </section>
+  </main>
 
-      <!-- Classroom -->
-      <article class="card">
-        <img src="images/Group-Photo.jpg" alt="Group Photo">
-        <div class="body">Children in classroom support</div>
-      </article>
-
-      <!-- School / Education -->
-      <article class="card">
-        <img src="images/photo-johannesburg-south-africa-march-2018.jpg" alt="Learners with school support">
-        <div class="body">Education & school support</div>
-      </article>
-
-      <!-- Community / Shelter outreach -->
-      <article class="card">
-        <img src="images/shelter.jpg" alt="Community outreach and family support">
-        <div class="body">Community outreach & family support</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="meta">&copy; 2025 Helping Hands NGO | All rights reserved</div>
   </footer>
 </body>
 </html>
-
-
-
