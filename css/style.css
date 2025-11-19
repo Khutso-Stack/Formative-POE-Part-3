@@ -192,60 +192,44 @@ nav.primary a[aria-current="page"]::after {
 }
 
 /* ==========================================
-   Hero (index page)
+   Hero
    ========================================== */
 
-/* HERO SECTION */
 .hero {
-  position: relative;
-  min-height: 55vh;     /* Reduced from 75vh */
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-5) var(--space-2);
+  padding: var(--space-5) var(--space-2) var(--space-4);
   text-align: center;
   color: #ffffff;
-
-  background-image: url("../images/NGO.jpg"); /* update if needed */
-  background-size: cover;
-  background-position: center center; /* shows the center of the image */
-  background-repeat: no-repeat;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.8),
+      rgba(38, 70, 83, 0.5)
+    ),
+    url("../images/NGO.jpg") center/cover no-repeat;
 }
 
-/* Dark overlay */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.75),
-    rgba(38, 70, 83, 0.55)
-  );
-}
-
-/* Inner hero card */
 .hero .inner {
-  position: relative;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
   background: rgba(15, 23, 42, 0.55);
-  padding: 1.8rem 2.2rem; /* smaller padding */
-  border-radius: 28px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+  padding: var(--space-3);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
 }
 
 .hero h2 {
-  font-size: 1.9rem; /* slightly smaller */
-  margin-bottom: 0.6rem;
+  font-size: 2.1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: var(--space-2);
+  font-size: 1.05rem;
 }
-
 
 .hero-actions {
   display: flex;
@@ -680,15 +664,6 @@ nav.primary a[aria-current="page"]::after {
 @media (max-width: 680px) {
   .site-header h1 {
     font-size: 1.9rem;
-  }
-
-  .hero {
-    min-height: 65vh;
-    padding: var(--space-4) var(--space-2);
-  }
-
-  .hero .inner {
-    padding: 1.7rem 1.4rem;
   }
 
   .hero h2 {
