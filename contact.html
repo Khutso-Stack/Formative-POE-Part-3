@@ -4,16 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Helping Hands – Contact</title>
+  <meta name="description" content="Contact Helping Hands Children's Shelter in Johannesburg and Pretoria for general enquiries, donations, or partnerships.">
+  <meta name="keywords" content="Contact Helping Hands, Johannesburg NGO, Pretoria children's shelter, email, phone, address">
   <link rel="stylesheet" href="css/style.css?v=3">
-
-  <meta name="description" content="Contact Helping Hands Children's Shelter in Johannesburg and Pretoria. Reach us via email, phone, or visit our branches." />
   <style>
-    /* Extra spacing for multiple maps */
-    .map-wrap + .map-wrap {
-      margin-top: var(--space-3);
-    }
+    .map-wrap + .map-wrap { margin-top: var(--space-3); }
   </style>
-  
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -34,7 +30,6 @@
   </nav>
 
   <main>
-    <!-- Contact info + maps -->
     <section class="section" aria-labelledby="get-in-touch">
       <h2 id="get-in-touch">Get in Touch</h2>
 
@@ -44,16 +39,12 @@
 
       <h3>Our Locations</h3>
       <address>
-        <p><strong>Johannesburg Branch</strong><br>
-        123 Main Road, Johannesburg, South Africa</p>
-
-        <p><strong>Pretoria Branch</strong><br>
-        45 Church Street, Pretoria, South Africa</p>
+        <p><strong>Johannesburg Branch</strong><br>123 Main Road, Johannesburg, South Africa</p>
+        <p><strong>Pretoria Branch</strong><br>45 Church Street, Pretoria, South Africa</p>
       </address>
 
       <h3>Find Us on the Map</h3>
 
-      <!-- Johannesburg map -->
       <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps?q=Johannesburg%2C%20South%20Africa&output=embed"
@@ -64,7 +55,6 @@
         </iframe>
       </div>
 
-      <!-- Pretoria map -->
       <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps?q=Pretoria%2C%20South%20Africa&output=embed"
@@ -76,45 +66,22 @@
       </div>
     </section>
 
-    <!-- Contact form hooked to main.js -->
     <section class="section">
       <h2>Send Us a Message</h2>
       <p class="meta">Use the form below for general enquiries, partnership ideas or media requests.</p>
 
-      <!-- IDs must match main.js: contact-form + contact-feedback -->
-      <form id="contact-form" class="form">
+      <form id="contact-form" class="form" action="mailto:info@helpinghands.org.za" method="post">
         <label for="contact-name">Full Name*</label>
-        <input
-          type="text"
-          id="contact-name"
-          name="name"
-          required
-          minlength="2"
-          maxlength="80">
+        <input type="text" id="contact-name" name="name" required minlength="2" maxlength="80">
 
         <label for="contact-email">Email Address*</label>
-        <input
-          type="email"
-          id="contact-email"
-          name="email"
-          required
-          placeholder="name@example.com">
+        <input type="email" id="contact-email" name="email" required placeholder="name@example.com">
 
         <label for="contact-subject">Subject*</label>
-        <input
-          type="text"
-          id="contact-subject"
-          name="subject"
-          required
-          maxlength="120">
+        <input type="text" id="contact-subject" name="subject" required maxlength="120">
 
         <label for="contact-message">Your Message*</label>
-        <textarea
-          id="contact-message"
-          name="message"
-          required
-          minlength="10"
-          maxlength="1000"></textarea>
+        <textarea id="contact-message" name="message" required minlength="10" maxlength="1000"></textarea>
 
         <p class="form-note">* Required fields</p>
 
@@ -127,6 +94,5 @@
   <footer class="site-footer">
     <div class="meta">&copy; 2025 Helping Hands NGO</div>
   </footer>
-
 </body>
 </html>
