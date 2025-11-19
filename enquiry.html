@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Helping Hands - Get Involved</title>
+  <meta name="description" content="Volunteer, sponsor a programme or donate to Helping Hands Children's Shelter by completing our Get Involved enquiry form.">
   <link rel="stylesheet" href="css/style.css?v=3">
-
-</head>
+  <!-- Main JavaScript for validation + interactions -->
   <script src="js/main.js" defer></script>
+</head>
 <body>
   <!-- Page header -->
   <header class="site-header">
@@ -34,29 +35,52 @@
   <!-- Form section -->
   <section class="section">
     <h2>Tell us how you’d like to help</h2>
-    <form id="enquiryForm" novalidate>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required />
-      <span class="error" id="nameError"></span>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-      <span class="error" id="emailError"></span>
+    <!-- IMPORTANT: id must match main.js (enquiry-form) -->
+    <form id="enquiry-form" class="form">
+      <label for="name">Full Name*</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        minlength="2"
+        maxlength="80" />
 
-      <label for="type">I want to</label>
-      <select id="type" name="interest">
-        <option>Volunteer</option>
-        <option>Become a Sponsor</option>
-        <option>Donate goods</option>
+      <label for="email">Email*</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="name@example.com" />
+
+      <label for="type">I want to*</label>
+      <select id="type" name="interest" required>
+        <option value="">Please select</option>
+        <option value="volunteer">Volunteer</option>
+        <option value="sponsor">Become a Sponsor</option>
+        <option value="donate-goods">Donate goods</option>
       </select>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Share any details, dates, or questions"></textarea>
+      <label for="message">Message*</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Share any details, dates, or questions"
+        required
+        minlength="10"
+        maxlength="1000"></textarea>
+
+      <p class="form-note">* Required fields</p>
 
       <div class="form-actions">
         <button type="submit" class="btn">Submit</button>
         <a class="btn secondary" href="programs.html">View Programs</a>
       </div>
+
+      <!-- Feedback element used by main.js -->
+      <p id="enquiry-feedback" class="form-feedback" aria-live="polite"></p>
     </form>
   </section>
 
@@ -64,42 +88,5 @@
   <footer class="site-footer">
     <div class="meta">&copy; 2025 Helping Hands NGO</div>
   </footer>
-
-  <!-- Simple validation script -->
-  <script>
-    const form = document.getElementById('enquiryForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-
-    form.addEventListener('submit', function(e) {
-      let valid = true;
-      nameError.textContent = "";
-      emailError.textContent = "";
-
-      if (!nameInput.value.trim()) {
-        nameError.textContent = "Please enter your full name.";
-        valid = false;
-      }
-      if (!emailInput.value.trim()) {
-        emailError.textContent = "Please enter your email address.";
-        valid = false;
-      } else if (!emailInput.checkValidity()) {
-        emailError.textContent = "Please enter a valid email (e.g. name@example.com).";
-        valid = false;
-      }
-
-      if (!valid) {
-        e.preventDefault();
-      } else {
-        e.preventDefault();
-        alert("✅ Thank you! We will contact you shortly.");
-        form.reset();
-      }
-    });
-  </script>
 </body>
 </html>
-
-
