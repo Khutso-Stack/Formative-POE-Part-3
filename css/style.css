@@ -120,34 +120,38 @@ main {
 /* ============================
    Modern Light Header
    ============================ */
+/* ============================
+   Modern Blue + Yellow Header
+   ============================ */
 .site-header {
   padding: var(--space-4) var(--space-2) var(--space-3);
   text-align: center;
 
-  /* Light grey → white → soft yellow gradient */
+  /* Modern blue gradient */
   background: linear-gradient(
     135deg,
-    #f3f4f6 0%,     /* light grey */
-    #ffffff 45%,    /* pure white */
-    #fff4bf 100%    /* soft warm yellow */
+    #3b82f6 0%,   /* bright blue */
+    #1d4ed8 50%,  /* royal blue */
+    #0f172a 100%  /* deep slate blue */
   );
 
   border-radius: 0 0 24px 24px;
-  color: var(--color-text-main);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  color: #ffffff;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.25);
 }
 
 .site-header h1 {
   margin: 0 0 0.4rem;
   font-size: 2.4rem;
   font-weight: 800;
-  color: #2d3748; /* modern charcoal */
+  color: #fefce8;           /* very light yellow/cream */
+  letter-spacing: 0.03em;
 }
 
 .site-header p {
   margin: 0;
-  font-size: 1.1rem;
-  color: #4a5568; /* medium grey */
+  font-size: 1.05rem;
+  color: #fde68a;           /* soft modern yellow */
 }
 
 
