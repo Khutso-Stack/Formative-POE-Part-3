@@ -7,16 +7,18 @@
 
   <title>Helping Hands – Home</title>
   <meta name="description" content="Helping Hands Children's Shelter provides food, shelter, and education to vulnerable children across Gauteng, South Africa.">
-</head>
+
+  <!-- JS MUST be inside head or body, not between them -->
   <script src="js/main.js" defer></script>
+</head>
 <body>
 
   <header class="site-header">
     <h1>Helping Hands Children's Shelter</h1>
-    <p>Providing shelter, food & hope to vulnerable children</p>
+    <p>Providing shelter, food &amp; hope to vulnerable children</p>
   </header>
 
-  <nav class="primary">
+  <nav class="primary" aria-label="Main">
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -26,34 +28,108 @@
     </ul>
   </nav>
 
-  <section class="hero">
-    <div class="inner">
-      <h2>Every Child Deserves a Home</h2>
-      <p>Together we provide shelter, food, and education.</p>
-      <a href="enquiry.html" class="btn cta">Donate / Volunteer</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="inner">
+        <h2>Every Child Deserves a Home</h2>
+        <p>Together we provide shelter, food, and education.</p>
+        <div class="hero-actions">
+          <a href="enquiry.html" class="btn cta">Donate / Volunteer</a>
+          <!-- Button that opens JS modal -->
+          <a href="#" class="btn secondary" id="open-volunteer-modal">Become a Volunteer</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="section lead">
-    <h2>Welcome</h2>
-    <p>Helping Hands is a non-profit organisation dedicated to supporting children in need across Gauteng.</p>
-    <a href="about.html" class="btn">Learn More</a>
-  </section>
+    <section class="section lead">
+      <h2>Welcome</h2>
+      <p>Helping Hands is a non-profit organisation dedicated to supporting children in need across Gauteng.</p>
+      <a href="about.html" class="btn">Learn More</a>
+    </section>
 
-  <section class="section">
-    <h2>Our Work in South Africa</h2>
-    <div class="grid">
-      <article class="card">
-        <img src="images/Kids-post-image.jpg" alt="Child in room">
-      </article>
-      <article class="card">
-        <img src="images/AFRICAN-GIRLS.jpg" alt="Education program">
-      </article>
-      <article class="card">
-        <img src="images/feeding-program-2.jpg" alt="Feeding program">
-      </article>
+    <!-- FAQ section – used by accordion JS -->
+    <section class="section faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <button class="accordion-item" type="button">
+        Who does Helping Hands support?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>We support vulnerable children and their families in Gauteng through shelter, meals and education support.</p>
+      </div>
+
+      <button class="accordion-item" type="button">
+        How can I donate or get involved?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>You can complete the Get Involved form, make a financial donation or support us with food, clothing and school supplies.</p>
+      </div>
+
+      <button class="accordion-item" type="button">
+        Are my donations tax deductible?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>Eligible donors can request a receipt for qualifying donations, in line with South African tax regulations.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Our Work in South Africa</h2>
+      <div class="grid">
+        <article class="card">
+          <img
+            src="images/Kids-post-image.jpg"
+            alt="Child in room"
+            class="gallery-item"
+            loading="lazy">
+        </article>
+        <article class="card">
+          <img
+            src="images/AFRICAN-GIRLS.jpg"
+            alt="Education program"
+            class="gallery-item"
+            loading="lazy">
+        </article>
+        <article class="card">
+          <img
+            src="images/feeding-program-2.jpg"
+            alt="Feeding program"
+            class="gallery-item"
+            loading="lazy">
+        </article>
+      </div>
+    </section>
+
+    <!-- Dynamic success stories (filled by main.js) -->
+    <section class="section" id="stories">
+      <h2>Success Stories</h2>
+      <p class="meta">Some of the children whose lives have been changed through your support.</p>
+      <div id="stories-grid" class="grid"></div>
+    </section>
+
+    <!-- Lightbox for gallery (used by JS) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="" id="lightbox-image">
+        <p id="lightbox-caption"></p>
+      </div>
     </div>
-  </section>
+
+    <!-- Volunteer modal (opened by #open-volunteer-modal) -->
+    <div class="modal-overlay" id="volunteer-modal" aria-hidden="true">
+      <div class="modal">
+        <button class="modal-close" id="close-volunteer-modal" aria-label="Close">&times;</button>
+        <h2>Become a Volunteer</h2>
+        <p>Volunteers help us provide meals, homework support and safe spaces for children after school.</p>
+        <p>Complete our Get Involved form and we’ll contact you with volunteer opportunities.</p>
+        <a href="enquiry.html" class="btn">Go to Volunteer Form</a>
+      </div>
+    </div>
+  </main>
 
   <footer class="site-footer">
     <div class="meta">&copy; 2025 Helping Hands NGO | All rights reserved</div>
@@ -61,6 +137,3 @@
 
 </body>
 </html>
-
-
-
