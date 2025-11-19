@@ -1,5 +1,6 @@
 /* ==========================================
    Helping Hands NGO - Global Styles
+   Modern Yellow / Black / Blue / Grey theme
    ========================================== */
 
 /* Reset / base */
@@ -18,26 +19,26 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-  color: #333;
-  background: radial-gradient(circle at top left, #f0fff7 0, #ffffff 35%, #fff8f1 100%);
+  color: #111827; /* near-black */
+  background: radial-gradient(circle at top left, #f5f5f7 0, #ffffff 40%, #e5e7eb 100%);
   line-height: 1.6;
 }
 
 /* Root design tokens */
 :root {
-  --color-primary: #ff7a3c;        /* warmer orange */
-  --color-primary-soft: #ffd08a;   /* soft highlight orange */
-  --color-secondary: #156f6a;      /* deep teal accent */
-  --color-bg: #fff8f1;
-  --color-surface: #ffffff;
-  --color-surface-soft: #fdf5ef;
-  --color-border-soft: #e3d8cf;
-  --color-text-main: #2f2f2f;
-  --color-text-muted: #676767;
+  --color-primary: #f9c74f;        /* modern warm yellow */
+  --color-primary-soft: #ffe08a;   /* soft highlight yellow */
+  --color-secondary: #264653;      /* deep blue */
+  --color-bg: #f5f5f7;             /* light grey */
+  --color-surface: #ffffff;        /* cards / panels */
+  --color-surface-soft: #f8f9fb;   /* soft grey panel */
+  --color-border-soft: #d4d7dd;    /* grey border */
+  --color-text-main: #111827;      /* near-black text */
+  --color-text-muted: #6b7280;     /* muted grey text */
   --radius-card: 14px;
   --radius-pill: 999px;
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-soft-hover: 0 6px 26px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 4px 20px rgba(15, 23, 42, 0.08);
+  --shadow-soft-hover: 0 6px 26px rgba(15, 23, 42, 0.12);
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -94,6 +95,7 @@ main {
   margin-bottom: 1.2rem;
   position: relative;
   display: inline-block;
+  color: var(--color-text-main);
 }
 
 .section h2::after {
@@ -103,7 +105,11 @@ main {
   bottom: -6px;
   width: 40%;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 4px;
 }
 
@@ -114,21 +120,22 @@ main {
 .site-header {
   padding: var(--space-4) var(--space-2) var(--space-3);
   text-align: center;
-  background: #fdf5ef;
+  background: #111827; /* dark header */
   border-radius: 0 0 20px 20px;
+  color: #f9fafb;
 }
 
 .site-header h1 {
   margin: 0 0 0.5rem;
   font-size: 2.4rem;
   font-weight: 800;
-  color: var(--color-text-main);
+  color: #f9fafb;
 }
 
 .site-header p {
   margin: 0;
   font-size: 1.1rem;
-  color: var(--color-text-muted);
+  color: #e5e7eb;
 }
 
 /* Nav */
@@ -136,7 +143,7 @@ nav.primary {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffffcc;
+  background: #ffffffd9;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border-soft);
 }
@@ -197,14 +204,18 @@ nav.primary a[aria-current="page"]::after {
   text-align: center;
   color: #ffffff;
   background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.3)),
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.8),
+      rgba(38, 70, 83, 0.5)
+    ),
     url("../images/NGO.jpg") center/cover no-repeat;
 }
 
 .hero .inner {
   max-width: 720px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(15, 23, 42, 0.55);
   padding: var(--space-3);
   border-radius: 20px;
   backdrop-filter: blur(4px);
@@ -231,7 +242,11 @@ nav.primary a[aria-current="page"]::after {
 .mini-hero {
   text-align: center;
   padding: var(--space-3) var(--space-2);
-  background: linear-gradient(135deg, #fff1e6, #ffe7d3);
+  background: linear-gradient(
+    135deg,
+    rgba(249, 199, 79, 0.15),
+    #e5e7eb
+  );
   border-top: 1px solid var(--color-border-soft);
   border-bottom: 1px solid var(--color-border-soft);
 }
@@ -239,6 +254,7 @@ nav.primary a[aria-current="page"]::after {
 .mini-hero h1 {
   margin: 0;
   font-size: 2rem;
+  color: var(--color-text-main);
 }
 
 /* ==========================================
@@ -247,31 +263,40 @@ nav.primary a[aria-current="page"]::after {
 
 .btn {
   display: inline-block;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-soft));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-soft)
+  );
   border-radius: 10px;
   padding: 0.8rem 1.4rem;
-  color: #ffffff;
+  color: #111827;
   font-weight: 600;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+  background: linear-gradient(
+    135deg,
+    #ffcf5c,
+    var(--color-primary)
+  );
 }
 
 .btn.secondary {
   background: #ffffff;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary-soft);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
 }
 
 .btn.secondary:hover {
-  background: #fff7f0;
+  background: #e5f2f3;
 }
 
 /* ==========================================
@@ -347,6 +372,7 @@ nav.primary a[aria-current="page"]::after {
 
 .card p {
   margin: 0;
+  color: var(--color-text-muted);
 }
 
 .card:hover {
@@ -367,6 +393,7 @@ nav.primary a[aria-current="page"]::after {
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border-soft);
   font-size: 0.95rem;
+  background: #f9fafb;
 }
 
 /* ==========================================
@@ -389,6 +416,7 @@ nav.primary a[aria-current="page"]::after {
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
+  color: var(--color-text-main);
 }
 
 .accordion-icon {
@@ -412,6 +440,7 @@ nav.primary a[aria-current="page"]::after {
 .accordion-panel p {
   padding: 0.5rem 0 0.75rem;
   margin: 0;
+  color: var(--color-text-muted);
 }
 
 /* ==========================================
@@ -427,6 +456,7 @@ nav.primary a[aria-current="page"]::after {
   display: block;
   margin-bottom: 0.25rem;
   font-weight: 600;
+  color: var(--color-text-main);
 }
 
 .form input,
@@ -439,6 +469,7 @@ nav.primary a[aria-current="page"]::after {
   border: 1px solid var(--color-border-soft);
   font-size: 0.95rem;
   font-family: inherit;
+  background: #ffffff;
 }
 
 .form textarea {
@@ -460,14 +491,14 @@ nav.primary a[aria-current="page"]::after {
 }
 
 .form .has-error {
-  border-color: #c62828;
-  background: #ffebee;
+  border-color: #b91c1c;
+  background: #fef2f2;
 }
 
 .field-error {
   display: block;
   font-size: 0.85rem;
-  color: #c62828;
+  color: #b91c1c;
   margin-top: -0.5rem;
   margin-bottom: 0.4rem;
 }
@@ -478,11 +509,11 @@ nav.primary a[aria-current="page"]::after {
 }
 
 .form-feedback.error {
-  color: #c62828;
+  color: #b91c1c;
 }
 
 .form-feedback.success {
-  color: #2e7d32;
+  color: #166534;
 }
 
 /* ==========================================
@@ -492,7 +523,7 @@ nav.primary a[aria-current="page"]::after {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(15, 23, 42, 0.8);
   display: none;
   align-items: center;
   justify-content: center;
@@ -506,11 +537,12 @@ nav.primary a[aria-current="page"]::after {
 .lightbox-inner {
   max-width: 900px;
   width: 90%;
-  background: #fff;
+  background: #ffffff;
   padding: 1rem;
   position: relative;
   text-align: center;
   border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.35);
 }
 
 .lightbox-inner img {
@@ -528,6 +560,7 @@ nav.primary a[aria-current="page"]::after {
   background: transparent;
   font-size: 1.6rem;
   cursor: pointer;
+  color: #111827;
 }
 
 /* ==========================================
@@ -537,7 +570,7 @@ nav.primary a[aria-current="page"]::after {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(15, 23, 42, 0.6);
   display: none;
   align-items: center;
   justify-content: center;
@@ -549,17 +582,23 @@ nav.primary a[aria-current="page"]::after {
 }
 
 .modal {
-  background: #fff;
+  background: #ffffff;
   max-width: 480px;
   width: 90%;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.3);
   position: relative;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: var(--color-text-main);
 }
 
 .modal p {
   margin-top: 0;
+  color: var(--color-text-muted);
 }
 
 .modal-close {
@@ -570,6 +609,7 @@ nav.primary a[aria-current="page"]::after {
   background: transparent;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #6b7280;
 }
 
 /* ==========================================
@@ -591,8 +631,8 @@ nav.primary a[aria-current="page"]::after {
 .site-footer {
   text-align: center;
   padding: var(--space-3) var(--space-2);
-  color: #444;
-  background: #f3ece4;
+  color: #e5e7eb;
+  background: #111827;
   border-top: 4px solid var(--color-primary);
   margin-top: var(--space-4);
 }
