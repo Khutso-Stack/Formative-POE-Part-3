@@ -195,22 +195,24 @@ nav.primary a[aria-current="page"]::after {
    Hero (index page)
    ========================================== */
 
+/* HERO SECTION */
 .hero {
   position: relative;
-  min-height: 75vh;                /* taller so more of the image shows */
+  min-height: 55vh;     /* Reduced from 75vh */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-5) var(--space-2);
   text-align: center;
   color: #ffffff;
-  background-image: url("../images/NGO.jpg"); /* change path if needed */
-  background-size: cover;          /* fill area */
-  background-position: center;     /* show more of image centre */
+
+  background-image: url("../images/NGO.jpg"); /* update if needed */
+  background-size: cover;
+  background-position: center center; /* shows the center of the image */
   background-repeat: no-repeat;
 }
 
-/* dark overlay over background image */
+/* Dark overlay */
 .hero::after {
   content: "";
   position: absolute;
@@ -222,27 +224,28 @@ nav.primary a[aria-current="page"]::after {
   );
 }
 
-/* inner card with text and buttons */
+/* Inner hero card */
 .hero .inner {
   position: relative;
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(15, 23, 42, 0.6);
-  padding: 2.3rem 3rem;
-  border-radius: 32px;
+  background: rgba(15, 23, 42, 0.55);
+  padding: 1.8rem 2.2rem; /* smaller padding */
+  border-radius: 28px;
   backdrop-filter: blur(5px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
 }
 
 .hero h2 {
-  font-size: 2.2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.9rem; /* slightly smaller */
+  margin-bottom: 0.6rem;
 }
 
 .hero p {
-  margin-bottom: var(--space-2);
-  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
+
 
 .hero-actions {
   display: flex;
