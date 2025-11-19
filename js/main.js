@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (storiesGrid) {
     storiesData.forEach(story => {
       const card = document.createElement("article");
-      card.className = "card story-card";
+      card.className = "card story-card fade-in";
       card.innerHTML = `
         <h3>${story.name}</h3>
         <p>${story.text}</p>
@@ -225,6 +225,30 @@ document.addEventListener("DOMContentLoaded", () => {
       contactFeedback.classList.add("success");
       contactForm.reset();
     });
+  }
+
+  /* -----------------------------
+     9. Fade-in on scroll
+     ----------------------------- */
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  if (fadeElements.length > 0 && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    fadeElements.forEach((el) => observer.observe(el));
+  } else if (fadeElements.length > 0) {
+    // Fallback: if IntersectionObserver not supported, just show elements
+    fadeElements.forEach((el) => el.classList.add("visible"));
   }
 
 });
