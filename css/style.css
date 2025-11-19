@@ -192,37 +192,50 @@ nav.primary a[aria-current="page"]::after {
 }
 
 /* ==========================================
-   Hero
+   Hero (index page)
    ========================================== */
 
 .hero {
-  min-height: 320px;
+  position: relative;
+  min-height: 75vh;                /* taller so more of the image shows */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-5) var(--space-2) var(--space-4);
+  padding: var(--space-5) var(--space-2);
   text-align: center;
   color: #ffffff;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.8),
-      rgba(38, 70, 83, 0.5)
-    ),
-    url("../images/NGO.jpg") center/cover no-repeat;
+  background-image: url("../images/NGO.jpg"); /* change path if needed */
+  background-size: cover;          /* fill area */
+  background-position: center;     /* show more of image centre */
+  background-repeat: no-repeat;
 }
 
+/* dark overlay over background image */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.75),
+    rgba(38, 70, 83, 0.55)
+  );
+}
+
+/* inner card with text and buttons */
 .hero .inner {
-  max-width: 720px;
+  position: relative;
+  max-width: 700px;
   margin: 0 auto;
-  background: rgba(15, 23, 42, 0.55);
-  padding: var(--space-3);
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.6);
+  padding: 2.3rem 3rem;
+  border-radius: 32px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
 }
 
 .hero h2 {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   margin-bottom: 0.75rem;
 }
 
@@ -664,6 +677,15 @@ nav.primary a[aria-current="page"]::after {
 @media (max-width: 680px) {
   .site-header h1 {
     font-size: 1.9rem;
+  }
+
+  .hero {
+    min-height: 65vh;
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .hero .inner {
+    padding: 1.7rem 1.4rem;
   }
 
   .hero h2 {
