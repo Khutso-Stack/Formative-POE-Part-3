@@ -117,26 +117,39 @@ main {
    Header & Navigation
    ========================================== */
 
+/* ============================
+   Modern Light Header
+   ============================ */
 .site-header {
   padding: var(--space-4) var(--space-2) var(--space-3);
   text-align: center;
-  background: #111827; /* dark header */
-  border-radius: 0 0 20px 20px;
-  color: #f9fafb;
+
+  /* Light grey → white → soft yellow gradient */
+  background: linear-gradient(
+    135deg,
+    #f3f4f6 0%,     /* light grey */
+    #ffffff 45%,    /* pure white */
+    #fff4bf 100%    /* soft warm yellow */
+  );
+
+  border-radius: 0 0 24px 24px;
+  color: var(--color-text-main);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .site-header h1 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   font-size: 2.4rem;
   font-weight: 800;
-  color: #f9fafb;
+  color: #2d3748; /* modern charcoal */
 }
 
 .site-header p {
   margin: 0;
   font-size: 1.1rem;
-  color: #e5e7eb;
+  color: #4a5568; /* medium grey */
 }
+
 
 /* Nav */
 nav.primary {
