@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css?v=3">
-
   <title>Helping Hands – Our Programs</title>
-</head>
+  <meta name="description" content="Explore Helping Hands programmes including health and nutrition, child protection, education support and community strengthening initiatives in South Africa.">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <!-- JS must be inside head or body -->
   <script src="js/main.js" defer></script>
+</head>
 <body>
 
   <header class="site-header">
@@ -15,7 +16,7 @@
     <p>Support for today and opportunities for tomorrow</p>
   </header>
 
-  <nav class="primary">
+  <nav class="primary" aria-label="Main">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -25,52 +26,93 @@
     </ul>
   </nav>
 
-  <!-- Programs grid -->
-  <section class="section grid">
-    <article class="card">
-      <img src="images/Donation-WEB-BANNER.jpg" alt="Meal program for children">
-      <div class="body">
-        <h2>Health and Nutrition</h2>
-        <p>Feeding schemes provide daily meals, vitamin distributions, and health awareness campaigns for children and families — addressing malnutrition and improving access to health services.</p>
-      </div>
-    </article>
+  <main>
+    <!-- Search/filter section -->
+    <section class="section program-search">
+      <h2>Find a Programme</h2>
+      <p class="meta">Search by type, focus area or keyword.</p>
+      <label for="program-search-input" class="visually-hidden">Search programmes</label>
+      <input
+        type="search"
+        id="program-search-input"
+        placeholder="e.g. nutrition, education, community, counselling">
+    </section>
 
-    <article class="card">
-      <img src="images/conserv.jpg" alt="Child protection and counseling program">
-      <div class="body">
-        <h2>Child Protection & Well-being</h2>
-        <p>Programs tackle gender-based violence prevention, support for orphaned and vulnerable children, and provide counseling services to foster resilience and life skills.</p>
-      </div>
-    </article>
+    <!-- Programs grid -->
+    <section class="section grid programs-list">
+      <article class="card program-card"
+               data-tags="health nutrition feeding meals clinic">
+        <img src="images/Donation-WEB-BANNER.jpg"
+             alt="Meal program for children"
+             class="gallery-item"
+             loading="lazy">
+        <div class="body">
+          <h2>Health and Nutrition</h2>
+          <p>Feeding schemes provide daily meals, vitamin distributions, and health awareness campaigns for children and families — addressing malnutrition and improving access to health services.</p>
+        </div>
+      </article>
 
-    <article class="card">
-      <img src="images/shelter.jpg" alt="Educational support program">
-      <div class="body">
-        <h2>Education & Development</h2>
-        <p>We help improve school attendance, supply uniforms, and create homework centers for children in need to support long-term academic growth.</p>
-      </div>
-    </article>
+      <article class="card program-card"
+               data-tags="child protection wellbeing counselling gbv trauma">
+        <img src="images/conserv.jpg"
+             alt="Child protection and counseling program"
+             class="gallery-item"
+             loading="lazy">
+        <div class="body">
+          <h2>Child Protection &amp; Well-being</h2>
+          <p>Programs tackle gender-based violence prevention, support for orphaned and vulnerable children, and provide counseling services to foster resilience and life skills.</p>
+        </div>
+      </article>
 
-    <article class="card">
-      <img src="images/Joy-Africa-Foundation-Liberia-Helpers-and-kids-in-Banjur.jpg" alt="Community initiative">
-      <div class="body">
-        <h2>Community & Family Strengthening</h2>
-        <p>Supporting families through economic empowerment, home-based gardens, and community-based savings and loan groups to build resilience and independence.</p>
-      </div>
-    </article>
-  </section>
+      <article class="card program-card"
+               data-tags="education school uniforms homework development">
+        <img src="images/shelter.jpg"
+             alt="Educational support program"
+             class="gallery-item"
+             loading="lazy">
+        <div class="body">
+          <h2>Education &amp; Development</h2>
+          <p>We help improve school attendance, supply uniforms, and create homework centers for children in need to support long-term academic growth.</p>
+        </div>
+      </article>
 
-  <!-- Impact section -->
-  <section class="section split">
-    <div class="text">
-      <h2>How We Measure Impact</h2>
-      <p>We use a mix of quantitative metrics (vaccinations, enrollment rates, literacy scores) and qualitative insights (testimonials, case studies, focus groups) to evaluate progress. KPIs include stable housing placements, improved nutrition markers, and school attendance. Transparency is maintained with quarterly reports.</p>
-      <a class="btn" href="enquiry.html">Partner with us</a>
+      <article class="card program-card"
+               data-tags="community family strengthening livelihoods savings gardens">
+        <img src="images/Joy-Africa-Foundation-Liberia-Helpers-and-kids-in-Banjur.jpg"
+             alt="Community initiative"
+             class="gallery-item"
+             loading="lazy">
+        <div class="body">
+          <h2>Community &amp; Family Strengthening</h2>
+          <p>Supporting families through economic empowerment, home-based gardens, and community-based savings and loan groups to build resilience and independence.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Impact section -->
+    <section class="section split">
+      <div class="text">
+        <h2>How We Measure Impact</h2>
+        <p>We use a mix of quantitative metrics (vaccinations, enrollment rates, literacy scores) and qualitative insights (testimonials, case studies, focus groups) to evaluate progress. KPIs include stable housing placements, improved nutrition markers, and school attendance. Transparency is maintained with quarterly reports.</p>
+        <a class="btn" href="enquiry.html">Partner with us</a>
+      </div>
+      <div class="image">
+        <img src="images/computer-donation.jpg"
+             alt="Computer donation program"
+             class="img-fill gallery-item"
+             loading="lazy">
+      </div>
+    </section>
+
+    <!-- Lightbox markup (shared with index, but safe to repeat if you prefer) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="" id="lightbox-image">
+        <p id="lightbox-caption"></p>
+      </div>
     </div>
-    <div class="image">
-      <img src="images/computer-donation.jpg" alt="Computer donation program" class="img-fill">
-    </div>
-  </section>
+  </main>
 
   <footer class="site-footer">
     <div class="meta">&copy; 2025 Helping Hands NGO</div>
@@ -78,8 +120,3 @@
 
 </body>
 </html>
-
-
-
-
-
