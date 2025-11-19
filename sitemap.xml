@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://khutso-stack.github.io/Formative-2-Part-2/index.html</loc>
+    <loc>https://khutso-stack.github.io/Formative-POE-Part-3/index.html</loc>
   </url>
-
   <url>
-    <loc>https://khutso-stack.github.io/Formative-2-Part-2/about.html</loc>
+    <loc>https://khutso-stack.github.io/Formative-POE-Part-3/about.html</loc>
   </url>
-
   <url>
-    <loc>https://khutso-stack.github.io/Formative-2-Part-2/programs.html</loc>
+    <loc>https://khutso-stack.github.io/Formative-POE-Part-3/programs.html</loc>
   </url>
-
   <url>
-    <loc>https://khutso-stack.github.io/Formative-2-Part-2/enquiry.html</loc>
+    <loc>https://khutso-stack.github.io/Formative-POE-Part-3/enquiry.html</loc>
   </url>
-
   <url>
-    <loc>https://khutso-stack.github.io/Formative-2-Part-2/contact.html</loc>
+    <loc>https://khutso-stack.github.io/Formative-POE-Part-3/contact.html</loc>
   </url>
 
 </urlset>
