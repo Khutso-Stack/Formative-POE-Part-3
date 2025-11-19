@@ -87,7 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
       lightbox.classList.remove("is-visible");
     };
 
-    lightboxClose.addEventListener("click", closeLB);
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", closeLB);
+    }
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLB();
     });
@@ -127,8 +129,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  /* ===========================================
+     5. PROGRAM SEARCH (Programs page – dynamic)
+     =========================================== */
+  const searchInput = document.getElementById("program-search-input");
+  const programCards = document.querySelectorAll(".program-card");
+
+  if (searchInput && programCards.length > 0) {
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.toLowerCase().trim();
+
+      programCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const tags = (card.dataset.tags || "").toLowerCase();
+        const match = !term || text.includes(term) || tags.includes(term);
+        card.style.display = match ? "" : "none";
+      });
+    });
+  }
+
+
   /* ======================================================
-     5. FORM VALIDATION + ERROR HANDLING (Enquiry & Contact)
+     6. FORM VALIDATION + ERROR HANDLING (Enquiry & Contact)
      ====================================================== */
 
   function validateForm(form, feedbackEl) {
