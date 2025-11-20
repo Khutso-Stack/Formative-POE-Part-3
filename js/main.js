@@ -59,8 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) closeModal();
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
   }
 
+  // Home hero modal (if present)
   setupModal("open-volunteer-modal", "close-volunteer-modal", "volunteer-modal");
 
   /* -----------------------------
@@ -88,6 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLB();
     });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLB();
+    });
   }
 
   /* -----------------------------
@@ -112,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (storiesGrid) {
     storiesData.forEach(story => {
       const card = document.createElement("article");
-      card.className = "card story-card fade-in";
+      card.className = "card story-card";
       card.innerHTML = `
         <h3>${story.name}</h3>
         <p>${story.text}</p>
@@ -228,27 +236,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* -----------------------------
-     9. Fade-in on scroll
+     9. Scroll Reveal for .fade-in
      ----------------------------- */
-  const fadeElements = document.querySelectorAll(".fade-in");
+  const fadeEls = document.querySelectorAll(".fade-in");
 
-  if (fadeElements.length > 0 && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+  if (fadeEls.length > 0) {
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
 
-    fadeElements.forEach((el) => observer.observe(el));
-  } else if (fadeElements.length > 0) {
-    // Fallback: if IntersectionObserver not supported, just show elements
-    fadeElements.forEach((el) => el.classList.add("visible"));
+      fadeEls.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: show all
+      fadeEls.forEach(el => el.classList.add("visible"));
+    }
   }
 
+  /* -----------------------------
+     10. Back-to-Top Button
+     ----------------------------- */
+  const backToTop = document.createElement("button");
+  backToTop.id = "back-to-top";
+  backToTop.className = "back-to-top";
+  backToTop.type = "button";
+  backToTop.setAttribute("aria-label", "Back to top");
+  backToTop.textContent = "↑";
+  document.body.appendChild(backToTop);
+
+  const toggleBackToTop = () => {
+    if (window.scrollY > 350) {
+      backToTop.classList.add("is-visible");
+    } else {
+      backToTop.classList.remove("is-visible");
+    }
+  };
+
+  window.addEventListener("scroll", toggleBackToTop);
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  /* -----------------------------
+     11. Auto Year in Footer
+     ----------------------------- */
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 });
