@@ -1,94 +1,234 @@
-# 📑 Changelog
+✅ Helping Hands Website – Changelog
 
-All notable changes to this project will be documented in this file.
+(Chronological overview of all updates for the Formative POE Part 3)
 
----
+v1.0 – Initial Setup
 
-## [1.2.0] - 2025-09-26
-### Added
-- **Homepage gallery** section using local images (`Kids-post-image.jpg`, `meal.jpg`, `classroom.jpg`, `school.jpg`, `shelter.jpg`) with captions.
-- **Responsive screenshots** (mobile & desktop) added under `/docs/screenshots/` and referenced in README.
-- `aria-current="page"` on active nav links for better accessibility feedback.
+(Foundational HTML structure)
 
-### Changed
-- **Mobile navigation UX:** nav is non-sticky ≤768px, row+wrap layout, smaller paddings for more content space.
-- **Hero overlay tuning** for better legibility and image visibility (lighter gradient).
-- Standardised image usage across pages: removed inline `width/height`, rely on CSS `object-fit: cover`; where applicable, added `srcset/sizes` or `image-set`.
+Created project repository: Formative-POE-Part-3
 
-### Fixed
-- Broken gallery images due to filename/path mismatches (case-sensitive on GitHub Pages).
-- Conflicting mobile nav rules at the same breakpoint (removed column stack rule).
-- Duplicate/weak `alt` text—improved descriptive alts on gallery and hero images.
-- Ensured embedded Google Maps are fully responsive inside `.map-wrap`.
+Added core pages:
 
-### Docs
-- README updated with **live site link**, structured **Responsive Screenshots** tables, and clearer run/deploy instructions.
-- Noted breakpoints (980px, 900px, 768px, 680px) and accessibility features (`:focus-visible`, reduced motion).
+index.html
 
+about.html
 
+programs.html
 
-## [1.1.0] - 2025-09-26
-### Added
-- Completed `index.html` homepage with hero section, welcome message, and gallery
-- Built `enquiry.html` page with volunteer/donation form and styled “mini-hero” banner
-- Added form validation (required fields, email type) and thank-you alert on submission
-- Secondary button style for alternative actions (e.g., “View Programs”)
+enquiry.html
 
-### Styling & Layout
-- Expanded `style.css` with:
-  - `.mini-hero` banner section styling
-  - Form styling for inputs, select dropdown, and textarea
-  - `.btn.secondary` for alternate call-to-actions
-- Improved spacing using CSS custom properties (`--space-1` to `--space-4`)
-- Added accessibility styles (`:focus-visible`) and reduced-motion support
+contact.html
 
-### Content Updates
-- Updated **Home page** with stronger CTA (“Donate / Volunteer”)
-- Improved **Programs page**: added “How We Measure Impact” section with KPIs and partner link
-- Contact page updated with clearer branch addresses and optional Pretoria map embed
-- All pages now include South African context in text and imagery
+Added folder structure (css/, images/, js/)
 
-### Responsive Design
-- Confirmed responsive layouts across all 5 pages:
-  - Hero height adjusts at 980px / 680px breakpoints
-  - Grids collapse to single column on mobile
-  - Split layouts stack vertically for smaller screens
+Basic HTML5 semantic layout implemented
 
-### Fixes & Final Polish
-- Unified headers and footers across all pages
-- Corrected inconsistent image `alt` attributes
-- Removed duplicate inline width/height on images (relying on CSS instead)
-- Consolidated inline CSS into `style.css` for maintainability
+Navigation bar added and linked across all pages
 
----
+Placeholder text & temporary images added for testing
 
-## [1.0.0] - 2025-09-04
-### Added
-- Initial commit: Added `index.html` and base folder structure
-- Added `css/style.css` with reset and base styles
-- Created `README.md` with project overview
+v1.1 – Initial CSS & Layout
 
-### Added Pages
-- `about.html` with mission, vision, and values section
-- `programs.html` with 3-column layout for programs
-- `contact.html` with Google Maps embed
+(Basic design and layout styling)
 
-### Styling & Layout
-- Responsive navigation bar
-- Hero section with background image overlay
-- Card grid layout and hover effects
+Added style.css with:
 
-### Content Updates
-- Expanded *Our Values* section with Care, Community, and Integrity
-- Added South African context (nutrition, education, child protection) to Programs
-- Footer with copyright
+base styling
 
-### Responsive Design
-- Breakpoints for mobile and tablet
-- Grid adjusts to 2-column on tablets, 1-column on phones
-- Added accessibility: alt text for images
+simple grid layout
 
-### Fixes & Final Polish
-- Corrected navigation typo on `enquiry.html` link
-- Resized images to fit columns consistently
-- Updated README with installation and deployment instructions
+basic hero section
+
+card layout
+
+Created consistent header and footer across all pages
+
+Applied simple responsive layout for mobile screens
+
+v1.2 – Navigation & Accessibility
+
+Made navigation sticky for improved UX
+
+Added aria-current="page" for active link highlighting
+
+Applied accessibility improvements:
+
+semantic headings
+
+focus-visible outlines
+
+improved contrast
+
+Removed unused styling & cleaned redundant CSS
+
+v1.3 – Content & Program Structure
+
+(Completing page content)
+
+Updated About page with detailed content
+
+Added NGO mission, vision, and values
+
+Built program cards for:
+
+Feeding Program
+
+Shelter Program
+
+Education & Homework Support Program
+
+Improved card spacing, shadows, and hover effects
+
+Added new high-quality images and optimized them
+
+v1.4 – Contact Page & Map Integration
+
+Added map embeds for Johannesburg & Pretoria
+
+Updated contact details and organisation information
+
+Improved address semantic formatting
+
+Styled map containers with shadows and corner radius
+
+v1.5 – Form Validation (JavaScript Phase 1)
+
+(First JS requirement completed)
+
+Added main.js and connected it to all pages
+
+Added enquiry form validation:
+
+name
+
+email
+
+message
+
+Added fake submission + success message
+
+Prevented full page reload on submit
+
+Improved error styling with .field-error elements
+
+v1.6 – Additional Interactivity (JavaScript Phase 2)
+
+(Meeting and exceeding JS requirements)
+Added the following features:
+
+1. FAQ / Accordion System
+
+Expand + collapse functionality
+
+Auto-close behaviour
+
+Smooth max-height animation
+
+2. Modal Window (Volunteer Pop-up)
+
+Added open/close logic
+
+Added overlay click-to-close
+
+Added ARIA attributes
+
+3. Lightbox Gallery
+
+Click program images to open full-screen
+
+Added caption support
+
+Added animated fade-in
+
+4. Program Search Filter
+
+Added search bar on Programs page
+
+Filters by keywords & tags
+
+Live updating
+
+5. Global Form Validation
+
+Shared validation function for multiple forms
+
+Contact form added
+
+Success + error states
+
+6. Dynamic Success Stories
+
+Auto-injected story cards from JS array
+
+Reduces HTML clutter
+
+Shows JS-level content creation
+
+v1.7 – Major Style Redesign (UI/UX Upgrade)
+
+(Full modern redesign requested by client)
+
+New colour palette applied:
+
+Bright yellow (#f9c74f)
+
+Royal blue (#1d4ed8)
+
+Deep navy (#0f172a)
+
+Soft grey (#f5f5f7)
+
+Professional header redesign with blue gradient
+
+Updated hero overlay to increase contrast
+
+Modern card shadows and hover depth
+
+Rebuilt section headers with gradient underline
+
+Unified spacing system with CSS variables
+
+New gradient buttons with elevation
+
+v1.8 – Animated & Interactive Enhancements
+
+Added fade-in animation on scroll
+
+Added Back-to-Top button with smooth scroll
+
+Improved hero text container (blurred glass panel)
+
+Tweaked image sizing & cover behaviour
+
+v1.9 – SEO & Performance Improvements
+
+Added <meta> descriptions on all pages
+
+Improved <title> tags for SEO
+
+Added alt text for all images
+
+Compressed and optimised hero and banner images
+
+Added consistent use of headings (H1/H2/H3)
+
+Added descriptive link text for accessibility
+
+v2.0 – Final Submission Version
+
+(Fully completed POE requirements)
+
+Finalised all pages & content
+
+Completed JavaScript (multi-feature interactive website)
+
+Added SEO: Sitemap + robots.txt (optional but included)
+
+Uploaded final clean version to GitHub Pages
+
+Verified all links, forms, and scripts
+
+Performed cross-browser testing
+
+Added final documentation, screenshots, and report notes
