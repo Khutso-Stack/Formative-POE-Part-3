@@ -296,4 +296,43 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+
+  /* -----------------------------
+     12. Stats Counter (Home)
+     ----------------------------- */
+  const statNumbers = document.querySelectorAll("[data-stat-target]");
+
+  if (statNumbers.length > 0 && "IntersectionObserver" in window) {
+    const animateValue = (el, target, duration = 1500) => {
+      const start = 0;
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(start + (target - start) * progress);
+        el.textContent = value.toLocaleString("en-ZA");
+        if (progress < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const statsObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.statTarget, 10);
+            if (!isNaN(target)) {
+              animateValue(el, target);
+            }
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    statNumbers.forEach(el => statsObserver.observe(el));
+  }
 });
