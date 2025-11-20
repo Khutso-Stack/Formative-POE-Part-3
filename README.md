@@ -223,6 +223,7 @@ Example (Home Page):
 
 These descriptions are concise, relevant, and under the recommended 160-character limit.
 
+
 4. Image File Names and ALT Text
 
 Images were optimised using descriptive file names and meaningful alt attributes. This improves SEO and accessibility for users with assistive devices.
@@ -245,8 +246,7 @@ robots.txt file:
 User-agent: *
 Allow: /
 
-Sitemap: https://khutso-stack.github.io/Formative-2-Part-2/sitemap.xml
-
+Sitemap:(https://khutso-stack.github.io/Formative-POE-Part-3/sitemap.xml)
 
 This ensures search engines can access the site structure without restriction.
 
@@ -269,6 +269,7 @@ Contact
 
 This improves the website's crawl efficiency and supports ranking accuracy.
 
+
 7. Performance and Page Speed
 
 The website was optimised for speed through:
@@ -283,6 +284,7 @@ Implementing responsive images using CSS and optimised file formats
 
 These measures improve loading performance on both mobile and desktop devices.
 
+
 8. Security Considerations
 
 Although GitHub Pages automatically provides HTTPS, additional security best practices were followed:
@@ -296,6 +298,7 @@ No external insecure HTTP resources
 Clean file structure limits attack surface
 
 These enhancements support a safer browsing experience for users.
+
 
 ⭐ SEO Summary Table
 SEO Requirement	Status	Description
